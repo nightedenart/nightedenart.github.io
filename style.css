@@ -1,6 +1,10 @@
 @keyframes hum {
-    from { opacity: .75}
-    to {opacity: 1}
+    from { opacity: .75;}
+    to { opacity: 1;}
+}
+
+::selection {
+	background: transparent;
 }
 
 * {
@@ -20,6 +24,7 @@ body {
 
 body {
     background-color: #000;
+    transition: background-color .5s ease;
 }
 
 .c-site-hero {
@@ -29,42 +34,28 @@ body {
     right: 0;
     bottom: 0;
     overflow: hidden;
-    animation: hum 1s ease alternate infinite;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.c-site-hero__layer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.c-site-hero__canvas {
+    width: 1280px;
+    height: 720px;
+    animation: hum 1s linear alternate infinite;
+    filter: brightness(1.2) contrast(1.1);
 }
 
-.c-circle-group {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    margin-left: -200px;
-    margin-top: -200px;
+.js-light-mode {
+	background-color: #fff;
 }
 
-.c-circle-group__circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    background-color: #1281b0;
-    opacity: 1;
-    transform: scale(0);
-    transform-origin: center bottom;
+.js-light-mode label {
+	color: #000 !important;
 }
 
-.c-circle-group--outlines {
-    opacity: .8;
-}
-
-.c-circle-group--outlines .c-circle-group__circle {
-    box-shadow: 0 0 0 2px #7ed6df;
+.js-light-mode .c-site-hero__canvas {
+    filter: none;
 }

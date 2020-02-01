@@ -3,68 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Circle Scale with rAF</title>
+    <title>Circle Scale using Canvas</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+
+	<label style="position: absolute; top: 20px; left: 20px; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; vertical-align: middle; z-index: 10;"><input id="js-blend-checkbox" type="checkbox" checked/> Enable blending mode</label>
+	
+	<label style="position: absolute; top: 40px; left: 20px; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; vertical-align: middle; z-index: 10;"><input id="js-light-checkbox" type="checkbox"/> Light mode</label>
+
     <div class="c-site-hero">
-
-        <div class="c-site-hero__layer" style="transform: translateX(-360px) translateY(-20px)">
-        <div class="c-circle-group  js-circle-group"  style="transform: rotate(-180deg) scale(.5)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-450px) translateY(-100px)">
-        <div class="c-circle-group  js-circle-group"  style="transform: rotate(90deg) scale(.6666)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-450px) translateY(-50px)">
-        <div class="c-circle-group  js-circle-group" data-color="#000"  style="transform: rotate(-30deg) scale(.67)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-460px) translateY(-120px)">
-        <div class="c-circle-group  js-circle-group" data-color="#2bcbba" style="transform: scale(.5) rotate(-135deg)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-300px) translateY(-120px)">
-        <div class="c-circle-group  js-circle-group" data-color="#000"  style="transform: rotate(90deg) scale(.8)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-450px) translateY(-50px)">
-        <div class="c-circle-group  c-circle-group--outlines  js-circle-group" data-color="transparent"  style="transform: rotate(-30deg) scale(.67)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(50px) translateY(50px) rotate(5deg);">
-        <div class="c-circle-group  js-circle-group"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-0px) translateY(-50px);">
-        <div class="c-circle-group  js-circle-group" data-color="#2bcbba" style="transform: scale(.8) rotate(135deg)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(100px) translateY(60px)">
-        <div class="c-circle-group  js-circle-group" data-color="#000"  style="transform: rotate(-105deg) scale(1)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(120px) translateY(-100px) rotate(0deg);">
-        <div class="c-circle-group  js-circle-group" style="transform: scale(1.1);"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(100px) translateY(60px)">
-        <div class="c-circle-group  js-circle-group" data-color="#000"  style="transform: rotate(-105deg) scale(1)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(100px) translateY(60px)">
-        <div class="c-circle-group  c-circle-group--outlines  js-circle-group" data-color="transparent"  style="transform: rotate(-105deg) scale(1)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(-100px) translateY(5px)">
-        <div class="c-circle-group  js-circle-group" data-color="#000"  style="transform: rotate(180deg) scale(.9)"></div>
-        </div>
-
-        <div class="c-site-hero__layer" style="transform: translateX(120px) translateY(-150px)">
-        <div class="c-circle-group  js-circle-group" data-color="#000"  style="transform: rotate(0deg) scale(.9)"></div>
-        </div>
-
+        <canvas class="c-site-hero__canvas" id="canvas" width="1280" height="720"></canvas>
     </div>
 
     <script src="script.js"></script>
